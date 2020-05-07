@@ -18,6 +18,7 @@
 package com.earth2me.essentials;
 
 import com.earth2me.essentials.commands.*;
+import com.earth2me.essentials.database.EssentialsDatabase;
 import com.earth2me.essentials.items.AbstractItemDb;
 import com.earth2me.essentials.items.CustomItemResolver;
 import com.earth2me.essentials.items.FlatItemDb;
@@ -208,6 +209,25 @@ public class Essentials extends JavaPlugin implements net.ess3.api.IEssentials {
                 settings = new Settings(this);
                 confList.add(settings);
                 execTimer.mark("Settings");
+                
+                try
+                {
+                    EssentialsDatabase.setup(
+                            settings.getDatabaseDriver(),
+                            settings.getDatabaseHostname(),
+                            settings.getDatabaseName(),
+                            settings.getDatabasePort(),
+                            settings.getDatabaseUsername(),
+                            settings.getDatabasePassword(),
+                            settings.getDatabaseTablePrefix()
+                    );
+                } catch (Throwable ex)
+                {
+                    LOGGER.severe("Could not set up database connection.");
+                    ex.printStackTrace();
+                    
+                    EssentialsDatabase.invalidate();
+                }
 
                 userMap = new UserMap(this);
                 confList.add(userMap);

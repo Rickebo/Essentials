@@ -28,7 +28,7 @@ public class Commandtp extends EssentialsCommand {
             case 1:
                 final User player = getPlayer(server, user, args, 0, false, true);
 
-                if (!player.isTeleportEnabled()) {
+                if (!player.isTeleportEnabled() && !user.isAuthorized("essentials.tp.override-tptoggle")) {
                     throw new Exception(tl("teleportDisabled", player.getDisplayName()));
                 }
 
@@ -72,7 +72,7 @@ public class Commandtp extends EssentialsCommand {
                     throw new NotEnoughArgumentsException(tl("teleportInvalidLocation"));
                 }
                 final Location locposother = new Location(target2.getWorld(), x, y, z, target2.getLocation().getYaw(), target2.getLocation().getPitch());
-                if (!target2.isTeleportEnabled()) {
+                if (!target2.isTeleportEnabled() && !user.isAuthorized("essentials.tp.override-tptoggle")) {
                     throw new Exception(tl("teleportDisabled", target2.getDisplayName()));
                 }
                 user.sendMessage(tl("teleporting", locposother.getWorld().getName(), locposother.getBlockX(), locposother.getBlockY(), locposother.getBlockZ()));
@@ -86,10 +86,10 @@ public class Commandtp extends EssentialsCommand {
                 }
                 final User target = getPlayer(server, user, args, 0);
                 final User toPlayer = getPlayer(server, user, args, 1);
-                if (!target.isTeleportEnabled()) {
+                if (!target.isTeleportEnabled() && !user.isAuthorized("essentials.tp.override-tptoggle")) {
                     throw new Exception(tl("teleportDisabled", target.getDisplayName()));
                 }
-                if (!toPlayer.isTeleportEnabled()) {
+                if (!toPlayer.isTeleportEnabled() && !user.isAuthorized("essentials.tp.override-tptoggle")) {
                     throw new Exception(tl("teleportDisabled", toPlayer.getDisplayName()));
                 }
                 if (target.getWorld() != toPlayer.getWorld() && ess.getSettings().isWorldTeleportPermissions() && !user.isAuthorized("essentials.worlds." + toPlayer.getWorld().getName())) {

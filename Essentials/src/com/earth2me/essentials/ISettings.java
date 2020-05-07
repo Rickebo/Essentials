@@ -20,6 +20,15 @@ import java.util.regex.Pattern;
 
 
 public interface ISettings extends IConf {
+    String getDatabaseDriver();
+    String getDatabaseHostname();
+    String getDatabaseTablePrefix();
+    String getDatabaseName();
+    String getDatabaseUsername();
+    String getDatabasePassword();
+    Integer getDatabasePort();
+    
+    
     boolean areSignsDisabled();
 
     IText getAnnounceNewPlayerFormat();

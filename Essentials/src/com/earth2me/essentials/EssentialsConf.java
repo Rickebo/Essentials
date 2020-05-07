@@ -1,5 +1,8 @@
 package com.earth2me.essentials;
 
+import com.earth2me.essentials.database.DbUserData;
+import com.earth2me.essentials.database.EssentialsDatabase;
+import com.earth2me.essentials.database.RuntimeSqlException;
 import com.google.common.io.Files;
 import net.ess3.api.InvalidWorldException;
 import org.bukkit.OfflinePlayer;
@@ -21,6 +24,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CoderResult;
 import java.nio.charset.StandardCharsets;
+import java.sql.SQLException;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -52,6 +56,10 @@ public class EssentialsConf extends YamlConfiguration {
     private final byte[] bytebuffer = new byte[1024];
 
     public synchronized void load() {
+        
+        if (isUserdata() && loadDatabaseUserData())
+            return;
+        
         if (pendingDiskWrites.get() != 0) {
             LOGGER.log(Level.INFO, "File {0} not read, because it''s not yet written to disk.", configFile);
             return;
@@ -148,6 +156,40 @@ public class EssentialsConf extends YamlConfiguration {
             LOGGER.log(Level.SEVERE, "The file " + configFile.toString() + " is broken, it has been renamed to " + broken.toString(), ex.getCause());
         }
     }
+    
+    public boolean isUserdata()
+    {
+        return configFile.getAbsoluteFile().getParentFile().getName().equals("userdata");
+    }
+    
+    public boolean loadDatabaseUserData()
+    {
+        String uuidStr = configFile.getName().replace(".yml", "");
+        UUID uuid = UUID.fromString(uuidStr);
+    
+        try
+        {
+            EssentialsDatabase database = EssentialsDatabase.getInstance();
+            
+            if (database == null)
+                return false;
+            
+            DbUserData userData = database.getUserData(uuid);
+        
+            if (userData == null)
+                return false;
+        
+            super.loadFromString(userData.getData());
+            return true;
+        } catch (SQLException ex)
+        {
+            throw new RuntimeSqlException(ex);
+        } catch (InvalidConfigurationException ex)
+        {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 
     public boolean legacyFileExists() {
         return false;
@@ -226,6 +268,9 @@ public class EssentialsConf extends YamlConfiguration {
 
     public void save() {
         try {
+            if (saveToDb())
+                return;
+            
             save(configFile);
         } catch (IOException ex) {
             LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
@@ -233,11 +278,17 @@ public class EssentialsConf extends YamlConfiguration {
     }
 
     public void saveWithError() throws IOException {
+        if (saveToDb())
+            return;
+    
         save(configFile);
     }
 
     @Override
     public synchronized void save(final File file) throws IOException {
+        if (saveToDb())
+            return;
+    
         if (!transaction.get()) {
             delayedSave(file);
         }
@@ -247,12 +298,44 @@ public class EssentialsConf extends YamlConfiguration {
     //This needs fixed to discard outstanding save requests.
     public synchronized void forceSave() {
         try {
+            if (saveToDb())
+                return;
+            
             Future<?> future = delayedSave(configFile);
             if (future != null) {
                 future.get();
             }
         } catch (InterruptedException | ExecutionException ex) {
             LOGGER.log(Level.SEVERE, ex.getMessage(), ex);
+        }
+    }
+    
+    private boolean saveToDb()
+    {
+        if (!configFile.getAbsolutePath().contains("userdata"))
+            return false;
+    
+        String uuidStr = configFile.getName().replace(".yml", "");
+        UUID uuid = UUID.fromString(uuidStr);
+    
+        try
+        {
+            EssentialsDatabase database = EssentialsDatabase.getInstance();
+            
+            if (database == null)
+                return false;
+            
+            database.save(new DbUserData(
+                    uuid,
+                    0,
+                    0,
+                    saveToString()
+            ));
+        
+            return true;
+        } catch (SQLException ex)
+        {
+            throw new RuntimeSqlException(ex);
         }
     }
 

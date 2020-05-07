@@ -22,6 +22,34 @@
 # +------------------------------------------------------+ #
 ############################################################
 
+# The address or domain name to connect to when connecting to the MySQL server.
+# DEFAULT: "127.0.0.1"
+database-driver: "jdbc:mysql"
+
+# The address or domain name to connect to when connecting to the MySQL server.
+# DEFAULT: "127.0.0.1"
+database-hostname: "127.0.0.1"
+
+# REQUIRED
+# Specifies the name of the database which the plugin will use.
+database-name: "rMPK2"
+
+# REQUIRED
+# The username to use when connecting to the database
+database-username: "root"
+
+# REQUIRED
+# The password to use when connecting to the database
+database-password: ""
+
+# REQUIRED
+# The port to use for the connection to the database
+database-port: 3306
+
+# The prefix to use for all tables in the database. This is useful to
+# prevent table naming collisions if multiple services are using the same database.
+database-table-prefix: ""
+
 # A color code between 0-9 or a-f. Set to 'none' to disable.
 ops-name-color: '4'
 

@@ -55,7 +55,49 @@ public class Settings implements net.ess3.api.ISettings {
         config.setTemplateName("/config.yml");
         reloadConfig();
     }
-
+    
+    @Override
+    public String getDatabaseDriver()
+    {
+        return config.getString("database-driver");
+    }
+    
+    @Override
+    public String getDatabaseHostname()
+    {
+        return config.getString("database-hostname");
+    }
+    
+    @Override
+    public String getDatabaseTablePrefix()
+    {
+        return config.getString("database-table-prefix");
+    }
+    
+    @Override
+    public String getDatabaseName()
+    {
+        return config.getString("database-name");
+    }
+    
+    @Override
+    public String getDatabaseUsername()
+    {
+        return config.getString("database-username");
+    }
+    
+    @Override
+    public String getDatabasePassword()
+    {
+        return config.getString("database-password");
+    }
+    
+    @Override
+    public Integer getDatabasePort()
+    {
+        return config.getInt("database-port");
+    }
+    
     @Override
     public boolean getRespawnAtHome() {
         return config.getBoolean("respawn-at-home", false);
@@ -409,7 +451,7 @@ public class Settings implements net.ess3.api.ISettings {
     public int getProtectCreeperMaxHeight() {
         return config.getInt("protect.creeper.max-height", -1);
     }
-
+    
     @Override
     public boolean areSignsDisabled() {
         return !signsEnabled;
