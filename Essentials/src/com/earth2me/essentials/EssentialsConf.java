@@ -5,6 +5,7 @@ import com.earth2me.essentials.database.EssentialsDatabase;
 import com.earth2me.essentials.database.RuntimeSqlException;
 import com.google.common.io.Files;
 import net.ess3.api.InvalidWorldException;
+import net.ess3.api.UserDoesNotExistException;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.*;
 import org.bukkit.configuration.ConfigurationSection;
@@ -55,11 +56,15 @@ public class EssentialsConf extends YamlConfiguration {
 
     private final byte[] bytebuffer = new byte[1024];
 
-    public synchronized void load() {
-        
+    public void load() {
         if (isUserdata() && loadDatabaseUserData())
             return;
         
+        internalLoad();
+    }
+    
+    private synchronized void internalLoad()
+    {
         if (pendingDiskWrites.get() != 0) {
             LOGGER.log(Level.INFO, "File {0} not read, because it''s not yet written to disk.", configFile);
             return;
@@ -91,7 +96,7 @@ public class EssentialsConf extends YamlConfiguration {
                 LOGGER.log(Level.SEVERE, null, ex);
             }
         }
-
+    
         if (!configFile.exists()) {
             if (legacyFileExists()) {
                 convertLegacyFile();
@@ -104,8 +109,8 @@ public class EssentialsConf extends YamlConfiguration {
                 return;
             }
         }
-
-
+    
+    
         try {
             try (FileInputStream inputStream = new FileInputStream(configFile)) {
                 long startSize = configFile.length();
@@ -170,21 +175,26 @@ public class EssentialsConf extends YamlConfiguration {
         try
         {
             EssentialsDatabase database = EssentialsDatabase.getInstance();
-            
+    
             if (database == null)
                 return false;
-            
+    
             DbUserData userData = database.getUserData(uuid);
-        
+    
             if (userData == null)
                 return false;
-        
+    
             super.loadFromString(userData.getData());
             return true;
         } catch (SQLException ex)
         {
+            ex.printStackTrace();
             throw new RuntimeSqlException(ex);
         } catch (InvalidConfigurationException ex)
+        {
+            ex.printStackTrace();
+            return false;
+        } catch (Exception ex)
         {
             ex.printStackTrace();
             return false;

@@ -57,6 +57,19 @@ public class EssentialsDatabase
         }
     }
     
+    public void enumerateIds(Consumer<String> enumerator) throws SQLException
+    {
+        StringBuffer sql;
+        PreparedStatement statement = connection.prepareStatement("SELECT uuid FROM " + userDataTableName);
+        
+        ResultSet resultSet = statement.executeQuery();
+        
+        resultSet.beforeFirst();
+        
+        while (resultSet.next())
+            enumerator.accept(resultSet.getString(1));
+    }
+    
     public static void invalidate()
     {
         instance = null;

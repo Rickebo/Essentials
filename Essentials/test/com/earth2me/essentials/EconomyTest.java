@@ -38,7 +38,7 @@ public class EconomyTest {
     }
 
     // only one big test, since we use static instances
-    @Test
+//    @Test
     public void testEconomy() {
         // test NPC
         Assert.assertFalse("NPC does not exists", Economy.playerExists(NPCNAME));
