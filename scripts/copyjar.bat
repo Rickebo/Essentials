@@ -18,5 +18,4 @@ echo     FROM: %latestjar%
 echo       TO: %targetpath%...
 copy /Y %latestjar% %targetpath%
 
-pause
 exit 0
