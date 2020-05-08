@@ -2,12 +2,13 @@ package com.earth2me.essentials.utils;
 
 import net.ess3.api.IUser;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class FormatUtilTest {
-
+    
     @Test
     public void testFormatCase() {
         checkFormatPerms("&aT&Aest", "&aT&Aest");

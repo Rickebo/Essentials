@@ -1,5 +1,8 @@
 package com.earth2me.essentials;
 
+import com.earth2me.essentials.database.DbUserData;
+import com.earth2me.essentials.database.EssentialsDatabase;
+import com.earth2me.essentials.database.RuntimeSqlException;
 import com.earth2me.essentials.utils.StringUtil;
 import com.google.common.base.Charsets;
 import com.google.common.cache.Cache;
@@ -13,10 +16,12 @@ import org.bukkit.entity.Player;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.sql.SQLException;
 import java.util.*;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.ExecutionException;
+import java.util.function.Consumer;
 import java.util.regex.Pattern;
 
 
@@ -55,15 +60,13 @@ public class UserMap extends CacheLoader<String, User> implements IConf {
     private void loadAllUsersAsync(final IEssentials ess) {
         ess.runTaskAsynchronously(() -> {
             synchronized (users) {
-                final File userdir = new File(ess.getDataFolder(), "userdata");
-                if (!userdir.exists()) {
-                    return;
-                }
+               
                 keys.clear();
                 users.invalidateAll();
-                for (String string : userdir.list()) {
+                
+                Consumer<String> iterator = string -> {
                     if (!string.endsWith(".yml")) {
-                        continue;
+                        return;
                     }
                     final String name = string.substring(0, string.length() - 4);
                     try {
@@ -71,10 +74,42 @@ public class UserMap extends CacheLoader<String, User> implements IConf {
                     } catch (IllegalArgumentException ex) {
                         //Ignore these users till they rejoin.
                     }
-                }
+                };
+                
+                if (!enumerateFiles(iterator))
+                    return;
+                
                 uuidMap.loadAllUsers(names, history);
             }
         });
+    }
+    
+    private boolean enumerateFiles(Consumer<String> iterator)
+    {
+        EssentialsDatabase database = EssentialsDatabase.getInstance();
+        
+        if (database != null)
+        {
+            try
+            {
+                database.enumerateIds(id -> iterator.accept(id + ".yml"));
+                return true;
+            } catch (SQLException ex)
+            {
+                ex.printStackTrace();
+                return false;
+            }
+        }
+        
+        final File userdir = new File(ess.getDataFolder(), "userdata");
+        if (!userdir.exists()) {
+            return false;
+        }
+        
+        for (String file : userdir.list())
+            iterator.accept(file);
+        
+        return true;
     }
 
     public boolean userExists(final UUID uuid) {
@@ -88,9 +123,8 @@ public class UserMap extends CacheLoader<String, User> implements IConf {
                 final UUID uuid = names.get(sanitizedName);
                 return getUser(uuid);
             }
-
-            final File userFile = getUserFileFromString(sanitizedName);
-            if (userFile.exists()) {
+    
+            if (hasUser(sanitizedName)) {
                 ess.getLogger().info("Importing user " + name + " to usermap.");
                 User user = new User(new OfflinePlayer(sanitizedName, ess.getServer()), ess);
                 trackUUID(user.getBase().getUniqueId(), user.getName(), true);
@@ -100,6 +134,26 @@ public class UserMap extends CacheLoader<String, User> implements IConf {
         } catch (UncheckedExecutionException ex) {
             return null;
         }
+    }
+    
+    private boolean hasUser(String name)
+    {
+        EssentialsDatabase database = EssentialsDatabase.getInstance();
+        
+        if (database != null)
+        {
+            try
+            {
+                DbUserData data = database.getUserData(UUID.fromString(name));
+                return data != null;
+            } catch (SQLException ex)
+            {
+                throw new RuntimeSqlException(ex);
+            }
+        }
+        
+        final File userFile = getUserFileFromString(name);
+        return userFile.exists();
     }
 
     public User getUser(final UUID uuid) {
@@ -147,9 +201,7 @@ public class UserMap extends CacheLoader<String, User> implements IConf {
             return user;
         }
 
-        final File userFile = getUserFileFromID(uuid);
-
-        if (userFile.exists()) {
+        if (hasUser(uuid.toString())) {
             player = new OfflinePlayer(uuid, ess.getServer());
             final User user = new User(player, ess);
             ((OfflinePlayer) player).setName(user.getLastAccountName());
