@@ -1,8 +1,6 @@
 package com.earth2me.essentials.database;
 
-import com.earth2me.essentials.Essentials;
-import com.earth2me.essentials.EssentialsConf;
-import com.earth2me.essentials.EssentialsUserConf;
+import com.earth2me.essentials.*;
 import jdk.jfr.internal.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -13,6 +11,7 @@ import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
@@ -130,7 +129,7 @@ public class EssentialsDatabase
             throws SQLException
     {
         PreparedStatement statement = connection.prepareStatement(
-                "SELECT uuid, money, last_seen, data FROM " + userDataTableName + " WHERE uuid = ?");
+                "SELECT * FROM " + userDataTableName + " WHERE uuid = ?");
         
         setValues(statement, uuid.toString());
         
@@ -185,17 +184,75 @@ public class EssentialsDatabase
         }
     }
     
+    public BalanceTopResult getBalanceTop(int index, int count) throws SQLException
+    {
+        PreparedStatement statement = connection.prepareStatement(
+                "SELECT (@rowNum:=@rowNum + 1) AS num, uuid, name, money FROM " + userDataTableName +
+                ", (SELECT @rowNum:=0) as t WHERE exempt_balancetop = FALSE ORDER BY money LIMIT ? OFFSET ?");
+    
+        statement.setInt(1, count);
+        statement.setInt(2, index);
+        
+        ResultSet resultSet = statement.executeQuery();
+        
+        resultSet.beforeFirst();
+        
+        List<BalanceTopEntry> userData = new LinkedList<>();
+        
+        
+        while (resultSet.next())
+        {
+            int num = resultSet.getInt(1);
+            String uuid = resultSet.getString("uuid");
+            String name = resultSet.getString("name");
+            double money = resultSet.getDouble("money");
+            
+            userData.add(new BalanceTopEntry(num, money, uuid, name));
+        }
+        
+        statement = connection.prepareStatement("SELECT SUM(money), COUNT(money) FROM " + userDataTableName + " WHERE exempt_balancetop = FALSE");
+        
+        resultSet = statement.executeQuery();
+        
+        resultSet.beforeFirst();
+        
+        double total = 0;
+        int accountCount = 0;
+        
+        if (resultSet.next())
+        {
+            total = resultSet.getDouble(1);
+            accountCount = resultSet.getInt(2);
+        }
+        
+        return new BalanceTopResult(userData, total, accountCount);
+    }
+    
     public boolean save(DbUserData userData)
             throws SQLException
     {
         PreparedStatement statement = connection.prepareStatement(
-                "REPLACE INTO " + userDataTableName + " (uuid, money, last_seen, data) VALUES (?, ?, ?, ?)");
+                "REPLACE INTO " + userDataTableName + " (uuid, money, last_seen, data, exempt_balancetop, name) VALUES (?, ?, ?, ?, ?, ?)");
+        
+        
+        User user = essentials.getUser(UUID.fromString(userData.getUuid()));
+        
+        boolean isExempt = true;
+        String name = "";
+        
+        if (user != null && user.getBase() instanceof OfflinePlayer)
+        {
+            isExempt = user.getBase().hasPermission("essentials.balancetop.exclude");
+            name = user.getName();
+        }
         
         setValues(statement,
                   userData.getUuid(),
                   userData.getMoney(),
                   userData.getLastSeen(),
-                  userData.getData()
+                  userData.getData(),
+                  isExempt,
+                  name
         );
         
         return statement.executeUpdate() != 0;
@@ -286,6 +343,11 @@ public class EssentialsDatabase
         return tableName;
     }
     
+    public Essentials getEssentials()
+    {
+        return essentials;
+    }
+    
     private static class Index
     {
         private final String indexName;
@@ -312,6 +374,71 @@ public class EssentialsDatabase
         public String getColumn()
         {
             return column;
+        }
+    }
+    
+    public static class BalanceTopResult
+    {
+        private final List<BalanceTopEntry> entries;
+        private final double total;
+        private final int count;
+        
+        public BalanceTopResult(List<BalanceTopEntry> entries, double total, int count)
+        {
+            this.entries = entries;
+            this.total = total;
+            this.count = count;
+        }
+    
+        public List<BalanceTopEntry> getEntries()
+        {
+            return entries;
+        }
+    
+        public double getTotal()
+        {
+            return total;
+        }
+        
+        public int getCount()
+        {
+            return count;
+        }
+    }
+    
+    public static class BalanceTopEntry
+    {
+        private final int index;
+        private final double money;
+        private final String uuid;
+        private final String name;
+        
+        public BalanceTopEntry(int index, double money, String uuid, String name)
+        {
+            this.index = index;
+            this.money = money;
+            this.uuid = uuid;
+            this.name = name;
+        }
+    
+        public int getIndex()
+        {
+            return index;
+        }
+    
+        public double getMoney()
+        {
+            return money;
+        }
+    
+        public String getUuid()
+        {
+            return uuid;
+        }
+    
+        public String getName()
+        {
+            return name;
         }
     }
 }

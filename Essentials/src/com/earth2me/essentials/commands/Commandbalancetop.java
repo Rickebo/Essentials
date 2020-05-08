@@ -2,14 +2,20 @@ package com.earth2me.essentials.commands;
 
 import com.earth2me.essentials.CommandSource;
 import com.earth2me.essentials.User;
+import com.earth2me.essentials.database.EssentialsDatabase;
 import com.earth2me.essentials.textreader.SimpleTextInput;
 import com.earth2me.essentials.textreader.TextPager;
 import com.earth2me.essentials.utils.NumberUtil;
 import com.google.common.collect.Lists;
+import org.bukkit.ChatColor;
 import org.bukkit.Server;
 
 import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -26,6 +32,10 @@ public class Commandbalancetop extends EssentialsCommand {
     private static final SimpleTextInput cache = new SimpleTextInput();
     private static long cacheage = 0;
     private static final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+    
+    private static final DecimalFormat countFormatter = new DecimalFormat("###,###");
+    private static final DecimalFormat moneyFormatter = new DecimalFormat("0.00");
+    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
     @Override
     protected void run(final Server server, final CommandSource sender, final String commandLabel, final String[] args) throws Exception {
@@ -39,6 +49,13 @@ public class Commandbalancetop extends EssentialsCommand {
                     force = true;
                 }
             }
+        }
+    
+        EssentialsDatabase database = EssentialsDatabase.getInstance();
+        if (database != null)
+        {
+            runDb(database, sender, page);
+            return;
         }
 
         if (!force && lock.readLock().tryLock()) {
@@ -61,7 +78,39 @@ public class Commandbalancetop extends EssentialsCommand {
         ess.runTaskAsynchronously(new Viewer(sender, commandLabel, page, force));
 
     }
-
+    
+    protected void runDb(final EssentialsDatabase db, final CommandSource sender, int page)
+    {
+        int pageSize = 8;
+        
+        try
+        {
+            EssentialsDatabase.BalanceTopResult data = db.getBalanceTop(page * pageSize, pageSize);
+            
+            LocalDateTime now = LocalDateTime.now();
+            int totalPages = (int) Math.ceil(data.getCount() / (double)pageSize);
+            
+            // sender.sendMessage(ChatColor.GOLD + "Ordering balances of " + ChatColor.RED + countFormatter.format(data.getCount()) + " users, please wait...");
+            sender.sendMessage(ChatColor.GOLD + "Top balances (" + now.format(dateTimeFormatter) + ")");
+            sender.sendMessage(ChatColor.GOLD + " ---- Balancetop -- Page " + ChatColor.RED + countFormatter.format(page) +
+                                       ChatColor.GOLD + "/" + ChatColor.RED + countFormatter.format(totalPages) + ChatColor.RED + " ----");
+            
+            sender.sendMessage(ChatColor.GOLD + "Server Total: " + ChatColor.RED + NumberUtil.displayCurrency(BigDecimal.valueOf(data.getTotal()), ess));
+            
+            int index = 1;
+            for (EssentialsDatabase.BalanceTopEntry entry : data.getEntries())
+                sender.sendMessage(countFormatter.format(entry.getIndex()) + ". " + entry.getName() + ", " +
+                                           NumberUtil.displayCurrency(BigDecimal.valueOf(entry.getMoney()), ess));
+            
+            if (data.getEntries().size() >= pageSize)
+                sender.sendMessage(ChatColor.GOLD + "Type " + ChatColor.RED + "/balancetop " + (page + 1) + ChatColor.GOLD + " to read the next page.");
+            
+        } catch (SQLException ex)
+        {
+            sender.sendMessage(ChatColor.RED + "An exception has occurred while processing your command.");
+        }
+    }
+    
     private static void outputCache(final CommandSource sender, int page) {
         final Calendar cal = Calendar.getInstance();
         cal.setTimeInMillis(cacheage);
