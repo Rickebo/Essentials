@@ -194,6 +194,7 @@ public class Essentials extends JavaPlugin implements net.ess3.api.IEssentials {
                 try
                 {
                     EssentialsDatabase.setup(
+                            this,
                             settings.getDatabaseDriver(),
                             settings.getDatabaseHostname(),
                             settings.getDatabaseName(),

@@ -49,6 +49,18 @@ public class EssentialsConf extends YamlConfiguration {
     private final AtomicInteger pendingDiskWrites = new AtomicInteger(0);
     private final AtomicBoolean transaction = new AtomicBoolean(false);
 
+    private static boolean enableDatabaseLoading = true;
+    
+    public static boolean isEnableDatabaseLoading()
+    {
+        return enableDatabaseLoading;
+    }
+    
+    public static void setEnableDatabaseLoading(boolean enableDatabaseLoading)
+    {
+        EssentialsConf.enableDatabaseLoading = enableDatabaseLoading;
+    }
+    
     public EssentialsConf(final File configFile) {
         super();
         this.configFile = configFile.getAbsoluteFile();
@@ -57,7 +69,7 @@ public class EssentialsConf extends YamlConfiguration {
     private final byte[] bytebuffer = new byte[1024];
 
     public void load() {
-        if (isUserdata() && loadDatabaseUserData())
+        if (enableDatabaseLoading && isUserdata() && loadDatabaseUserData())
             return;
         
         internalLoad();
@@ -335,10 +347,16 @@ public class EssentialsConf extends YamlConfiguration {
             if (database == null)
                 return false;
             
+            BigDecimal decimal = getBigDecimal("money", new BigDecimal(0));
+            double money = decimal != null ? decimal.doubleValue() : 0;
+            
+            Long lastSeen = getLastSeen();
+            long lastSeenValue = lastSeen != null ? lastSeen : 0;
+            
             database.save(new DbUserData(
                     uuid,
-                    0,
-                    0,
+                    money,
+                    lastSeenValue,
                     saveToString()
             ));
         
@@ -349,6 +367,20 @@ public class EssentialsConf extends YamlConfiguration {
         }
     }
 
+    private Long getLastSeen()
+    {
+        Long logIn = getLong("timestamps.logout");
+        Long logOut = getLong("timestamps.login");
+        
+        if (logOut == null)
+            return logIn;
+        
+        if (logIn == null)
+            return null;
+        
+        return Math.max(logIn, logOut);
+    }
+    
     public synchronized void cleanup() {
         forceSave();
     }

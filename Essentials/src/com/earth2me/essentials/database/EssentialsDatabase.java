@@ -1,9 +1,16 @@
 package com.earth2me.essentials.database;
 
 import com.earth2me.essentials.Essentials;
+import com.earth2me.essentials.EssentialsConf;
+import com.earth2me.essentials.EssentialsUserConf;
+import jdk.jfr.internal.Logger;
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 
+import java.io.File;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,19 +32,22 @@ public class EssentialsDatabase
     
     private final String userDataTableName;
     
+    private final Essentials essentials;
+    
     private static EssentialsDatabase instance = null;
     public static EssentialsDatabase getInstance()
     {
         return instance;
     }
     
-    public static void setup(String driver, String hostname, String database,
+    public static void setup(Essentials essentials, String driver, String hostname, String database,
                              int port, String username, String password, String tablePrefix)
     {
         if (instance != null)
             return;
         
         instance = new EssentialsDatabase(
+                essentials,
                 driver,
                 hostname,
                 database,
@@ -75,7 +85,7 @@ public class EssentialsDatabase
         instance = null;
     }
     
-    public EssentialsDatabase(String driver, String hostname, String database, int port, String username, String password, String tablePrefix)
+    public EssentialsDatabase(Essentials essentials, String driver, String hostname, String database, int port, String username, String password, String tablePrefix)
     {
         this.driver = driver;
         this.hostname = hostname;
@@ -84,6 +94,8 @@ public class EssentialsDatabase
         this.username = username;
         this.password = password;
         this.tablePrefix = tablePrefix;
+        
+        this.essentials = essentials;
         
         this.userDataTableName = tablePrefix + "userdata";
     }
@@ -130,6 +142,47 @@ public class EssentialsDatabase
             return null;
         
         return new DbUserData(resultSet);
+    }
+    
+    public void importData()
+    {
+        final File userdir = new File(essentials.getDataFolder(), "userdata");
+        int currentUser = 0;
+        
+        File[] files = userdir.listFiles();
+        
+        if (files == null)
+        {
+            essentials.getLogger().info("Cannot import userdata since there is no userdata to import.");
+            return;
+        }
+    
+        EssentialsConf.setEnableDatabaseLoading(false);
+
+        try
+        {
+            for (File userFile : files)
+            {
+                if (currentUser++ % 100 == 0)
+                    essentials.getLogger().info("Importing userdata " + currentUser + " (" + userFile.getName() + ")");
+        
+                String uuidStr = userFile.getName().replace(".yml", "");
+        
+                UUID uuid = UUID.fromString(uuidStr);
+        
+                if (uuid == null)
+                    continue;
+        
+                OfflinePlayer player = Bukkit.getOfflinePlayer(uuid);
+        
+                EssentialsUserConf conf = new EssentialsUserConf(player.getName(), uuid, userFile);
+                conf.load();
+                conf.save();
+            }
+        } finally
+        {
+            EssentialsConf.setEnableDatabaseLoading(true);
+        }
     }
     
     public boolean save(DbUserData userData)
