@@ -82,11 +82,14 @@ public class Commandbalancetop extends EssentialsCommand {
     
     protected void runDb(final EssentialsDatabase db, final CommandSource sender, int page)
     {
+        if (page < 1)
+            page = 1;
+        
         int pageSize = 8;
         
         try
         {
-            EssentialsDatabase.BalanceTopResult data = db.getBalanceTop(page * pageSize, pageSize);
+            EssentialsDatabase.BalanceTopResult data = db.getBalanceTop((page - 1) * pageSize, pageSize);
             
             LocalDateTime now = LocalDateTime.now();
             int totalPages = (int) Math.ceil(data.getCount() / (double)pageSize);
@@ -98,7 +101,6 @@ public class Commandbalancetop extends EssentialsCommand {
             
             sender.sendMessage(ChatColor.GOLD + "Server Total: " + ChatColor.RED + NumberUtil.displayCurrency(BigDecimal.valueOf(data.getTotal()), ess));
             
-            int index = 1;
             for (EssentialsDatabase.BalanceTopEntry entry : data.getEntries())
                 sender.sendMessage(countFormatter.format(entry.getIndex()) + ". " + entry.getName() + ", " +
                                            NumberUtil.displayCurrency(BigDecimal.valueOf(entry.getMoney()), ess));
@@ -109,6 +111,8 @@ public class Commandbalancetop extends EssentialsCommand {
         } catch (SQLException ex)
         {
             sender.sendMessage(ChatColor.RED + "An exception has occurred while processing your command.");
+            ess.getLogger().severe("An exception has occurred while processing balancetop command using database.");
+            ex.printStackTrace();
         }
     }
     

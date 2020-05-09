@@ -16,7 +16,7 @@ public class DbUserData
     @DatabaseColumn(name = uuidColumnName, type = "CHAR(36) NOT NULL PRIMARY KEY", indexName = "uuid_index")
     private String uuid;
     
-    @DatabaseColumn(name = nameColumnName, type = "TINYTEXT NOT NULL")
+    @DatabaseColumn(name = nameColumnName, type = "TINYTEXT NOT NULL", indexName = "player_name")
     private String name;
     
     @DatabaseColumn(name = moneyColumnName, type = "DOUBLE NOT NULL", indexName = "money_index")
