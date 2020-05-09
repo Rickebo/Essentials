@@ -353,12 +353,14 @@ public class EssentialsConf extends YamlConfiguration {
             Long lastSeen = getLastSeen();
             long lastSeenValue = lastSeen != null ? lastSeen : 0;
             
+            boolean exemptOverride = this.getBoolean("npc", false);
+            
             database.save(new DbUserData(
                     uuid,
                     money,
                     lastSeenValue,
                     saveToString()
-            ));
+            ), exemptOverride);
         
             return true;
         } catch (SQLException ex)

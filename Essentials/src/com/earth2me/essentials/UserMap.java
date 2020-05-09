@@ -136,6 +136,25 @@ public class UserMap extends CacheLoader<String, User> implements IConf {
         }
     }
     
+    private boolean hasUser(UUID uuid)
+    {
+        EssentialsDatabase database = EssentialsDatabase.getInstance();
+    
+        if (database != null)
+        {
+            try
+            {
+                return database.hasPlayer(uuid);
+            } catch (SQLException ex)
+            {
+                throw new RuntimeSqlException(ex);
+            }
+        }
+    
+        final File userFile = getUserFileFromID(uuid);
+        return userFile.exists();
+    }
+    
     private boolean hasUser(String name)
     {
         EssentialsDatabase database = EssentialsDatabase.getInstance();
@@ -144,8 +163,7 @@ public class UserMap extends CacheLoader<String, User> implements IConf {
         {
             try
             {
-                DbUserData data = database.getUserData(UUID.fromString(name));
-                return data != null;
+                return database.hasPlayerName(name);
             } catch (SQLException ex)
             {
                 throw new RuntimeSqlException(ex);
@@ -201,7 +219,7 @@ public class UserMap extends CacheLoader<String, User> implements IConf {
             return user;
         }
 
-        if (hasUser(uuid.toString())) {
+        if (hasUser(uuid)) {
             player = new OfflinePlayer(uuid, ess.getServer());
             final User user = new User(player, ess);
             ((OfflinePlayer) player).setName(user.getLastAccountName());

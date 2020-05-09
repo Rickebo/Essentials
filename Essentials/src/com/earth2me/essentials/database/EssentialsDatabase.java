@@ -125,6 +125,34 @@ public class EssentialsDatabase
         }
     }
     
+    public boolean hasPlayerName(String name)
+            throws SQLException
+    {
+        PreparedStatement statement = connection.prepareStatement("SELECT EXISTS(SELECT * FROM " + userDataTableName + " WHERE name = ?)");
+        
+        setValues(statement, name);
+        
+        ResultSet resultSet = statement.executeQuery();
+        
+        resultSet.beforeFirst();
+        
+        return resultSet.next() && resultSet.getInt(1) > 0;
+    }
+    
+    public boolean hasPlayer(UUID uuid)
+            throws SQLException
+    {
+        PreparedStatement statement = connection.prepareStatement("SELECT EXISTS(SELECT * FROM " + userDataTableName + " WHERE uuid = ?)");
+    
+        setValues(statement, uuid.toString());
+    
+        ResultSet resultSet = statement.executeQuery();
+    
+        resultSet.beforeFirst();
+    
+        return resultSet.next() && resultSet.getInt(1) > 0;
+    }
+    
     public DbUserData getUserData(UUID uuid)
             throws SQLException
     {
@@ -188,7 +216,7 @@ public class EssentialsDatabase
     {
         PreparedStatement statement = connection.prepareStatement(
                 "SELECT (@rowNum:=@rowNum + 1) AS num, uuid, name, money FROM " + userDataTableName +
-                ", (SELECT @rowNum:=0) as t WHERE exempt_balancetop = FALSE ORDER BY money LIMIT ? OFFSET ?");
+                ", (SELECT @rowNum:=0) as t WHERE exempt_balancetop = FALSE ORDER BY money DESC LIMIT ? OFFSET ?");
     
         statement.setInt(1, count);
         statement.setInt(2, index);
@@ -228,12 +256,11 @@ public class EssentialsDatabase
         return new BalanceTopResult(userData, total, accountCount);
     }
     
-    public boolean save(DbUserData userData)
+    public boolean save(DbUserData userData, boolean isExemptOverride)
             throws SQLException
     {
         PreparedStatement statement = connection.prepareStatement(
                 "REPLACE INTO " + userDataTableName + " (uuid, money, last_seen, data, exempt_balancetop, name) VALUES (?, ?, ?, ?, ?, ?)");
-        
         
         User user = essentials.getUser(UUID.fromString(userData.getUuid()));
         
@@ -242,7 +269,9 @@ public class EssentialsDatabase
         
         if (user != null && user.getBase() instanceof OfflinePlayer)
         {
-            isExempt = user.getBase().hasPermission("essentials.balancetop.exclude");
+            if (!isExemptOverride)
+                isExempt = user.getBase().hasPermission("essentials.balancetop.exclude");
+            
             name = user.getName();
         }
         
