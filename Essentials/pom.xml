@@ -49,6 +49,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.4.5</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>com.github.milkbowl</groupId>
             <artifactId>VaultAPI</artifactId>
             <version>1.7</version>

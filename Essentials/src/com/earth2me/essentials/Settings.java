@@ -57,6 +57,12 @@ public class Settings implements net.ess3.api.ISettings {
     }
     
     @Override
+    public Integer getMaxPoolSize()
+    {
+        return config.getInt("database-connections-max-pool-size");
+    }
+    
+    @Override
     public String getDatabaseDriver()
     {
         return config.getString("database-driver");
