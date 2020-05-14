@@ -27,6 +27,7 @@ public interface ISettings extends IConf {
     String getDatabaseUsername();
     String getDatabasePassword();
     Integer getDatabasePort();
+    Integer getMaxPoolSize();
     
     
     boolean areSignsDisabled();

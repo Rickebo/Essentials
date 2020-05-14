@@ -1,6 +1,7 @@
 package com.earth2me.essentials.database;
 
 import com.earth2me.essentials.*;
+import com.zaxxer.hikari.HikariDataSource;
 import jdk.jfr.internal.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -19,7 +20,7 @@ import java.util.function.Consumer;
 
 public class EssentialsDatabase
 {
-    private Connection connection;
+    private HikariDataSource dataSource;
     
     private final String driver;
     private final String tablePrefix;
@@ -28,6 +29,7 @@ public class EssentialsDatabase
     private final int port;
     private final String username;
     private final String password;
+    private final int maxPoolSize;
     
     private final String userDataTableName;
     
@@ -40,7 +42,7 @@ public class EssentialsDatabase
     }
     
     public static void setup(Essentials essentials, String driver, String hostname, String database,
-                             int port, String username, String password, String tablePrefix)
+                             int port, String username, String password, String tablePrefix, int maxPoolSize)
     {
         if (instance != null)
             return;
@@ -53,7 +55,8 @@ public class EssentialsDatabase
                 port,
                 username,
                 password,
-                tablePrefix
+                tablePrefix,
+                maxPoolSize
         );
     
     
@@ -68,15 +71,17 @@ public class EssentialsDatabase
     
     public void enumerateIds(Consumer<String> enumerator) throws SQLException
     {
-        StringBuffer sql;
-        PreparedStatement statement = connection.prepareStatement("SELECT uuid FROM " + userDataTableName);
-        
-        ResultSet resultSet = statement.executeQuery();
-        
-        resultSet.beforeFirst();
-        
-        while (resultSet.next())
-            enumerator.accept(resultSet.getString(1));
+        try (PreparedStatementWrapper wrapper = createStatement("SELECT uuid FROM " + userDataTableName))
+        {
+            PreparedStatement statement = wrapper.getPreparedStatement();
+            
+            ResultSet resultSet = statement.executeQuery();
+    
+            resultSet.beforeFirst();
+    
+            while (resultSet.next())
+                enumerator.accept(resultSet.getString(1));
+        }
     }
     
     public static void invalidate()
@@ -84,7 +89,8 @@ public class EssentialsDatabase
         instance = null;
     }
     
-    public EssentialsDatabase(Essentials essentials, String driver, String hostname, String database, int port, String username, String password, String tablePrefix)
+    public EssentialsDatabase(Essentials essentials, String driver, String hostname, String database, int port,
+            String username, String password, String tablePrefix, int maxPoolSize)
     {
         this.driver = driver;
         this.hostname = hostname;
@@ -93,6 +99,7 @@ public class EssentialsDatabase
         this.username = username;
         this.password = password;
         this.tablePrefix = tablePrefix;
+        this.maxPoolSize = maxPoolSize;
         
         this.essentials = essentials;
         
@@ -103,7 +110,12 @@ public class EssentialsDatabase
             throws SQLException
     {
         String url = driver + "://" + hostname + ":" + port + "/" + database;
-        connection = DriverManager.getConnection(url, username, password);
+        dataSource = new HikariDataSource();
+        
+        dataSource.setJdbcUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+        dataSource.setMaximumPoolSize(maxPoolSize);
         
         createTable(userDataTableName, DbUserData.class);
         createIndices(userDataTableName, DbUserData.class);
@@ -128,47 +140,61 @@ public class EssentialsDatabase
     public boolean hasPlayerName(String name)
             throws SQLException
     {
-        PreparedStatement statement = connection.prepareStatement("SELECT EXISTS(SELECT * FROM " + userDataTableName + " WHERE name = ?)");
-        
-        setValues(statement, name);
-        
-        ResultSet resultSet = statement.executeQuery();
-        
-        resultSet.beforeFirst();
-        
-        return resultSet.next() && resultSet.getInt(1) > 0;
+        try (PreparedStatementWrapper wrapper = createStatement(
+                "SELECT EXISTS(SELECT * FROM " + userDataTableName + " WHERE name = ?)"
+        ))
+        {
+            PreparedStatement statement = wrapper.getPreparedStatement();
+    
+            setValues(statement, name);
+    
+            ResultSet resultSet = statement.executeQuery();
+    
+            resultSet.beforeFirst();
+    
+            return resultSet.next() && resultSet.getInt(1) > 0;
+        }
     }
     
     public boolean hasPlayer(UUID uuid)
             throws SQLException
     {
-        PreparedStatement statement = connection.prepareStatement("SELECT EXISTS(SELECT * FROM " + userDataTableName + " WHERE uuid = ?)");
+        try (PreparedStatementWrapper wrapper = createStatement(
+                "SELECT EXISTS(SELECT * FROM " + userDataTableName + " WHERE uuid = ?)"
+        ))
+        {
+            PreparedStatement statement = wrapper.getPreparedStatement();
+            
+            setValues(statement, uuid.toString());
     
-        setValues(statement, uuid.toString());
+            ResultSet resultSet = statement.executeQuery();
     
-        ResultSet resultSet = statement.executeQuery();
+            resultSet.beforeFirst();
     
-        resultSet.beforeFirst();
-    
-        return resultSet.next() && resultSet.getInt(1) > 0;
+            return resultSet.next() && resultSet.getInt(1) > 0;
+        }
     }
     
     public DbUserData getUserData(UUID uuid)
             throws SQLException
     {
-        PreparedStatement statement = connection.prepareStatement(
-                "SELECT * FROM " + userDataTableName + " WHERE uuid = ?");
-        
-        setValues(statement, uuid.toString());
-        
-        ResultSet resultSet = statement.executeQuery();
-        
-        resultSet.beforeFirst();
-        
-        if (!resultSet.next())
-            return null;
-        
-        return new DbUserData(resultSet);
+        try (PreparedStatementWrapper wrapper = createStatement(
+                "SELECT * FROM " + userDataTableName + " WHERE uuid = ?"
+        ))
+        {
+            PreparedStatement statement = wrapper.getPreparedStatement();
+    
+            setValues(statement, uuid.toString());
+    
+            ResultSet resultSet = statement.executeQuery();
+    
+            resultSet.beforeFirst();
+    
+            if (!resultSet.next())
+                return null;
+    
+            return new DbUserData(resultSet);
+        }
     }
     
     public void importData()
@@ -214,77 +240,89 @@ public class EssentialsDatabase
     
     public BalanceTopResult getBalanceTop(int index, int count) throws SQLException
     {
-        PreparedStatement statement = connection.prepareStatement(
-                "SELECT (@rowNum:=@rowNum + 1) AS num, uuid, name, money FROM " + userDataTableName +
-                ", (SELECT @rowNum:=0) as t WHERE exempt_balancetop = FALSE ORDER BY money DESC LIMIT ? OFFSET ?");
-    
-        statement.setInt(1, count);
-        statement.setInt(2, index);
-        
-        ResultSet resultSet = statement.executeQuery();
-        
-        resultSet.beforeFirst();
-        
         List<BalanceTopEntry> userData = new LinkedList<>();
         
-        
-        while (resultSet.next())
+        try (PreparedStatementWrapper wrapper = createStatement(
+                "SELECT (@rowNum:=@rowNum + 1) AS num, uuid, name, money FROM " + userDataTableName +
+                        ", (SELECT @rowNum:=0) as t WHERE exempt_balancetop = FALSE ORDER BY money DESC LIMIT ? OFFSET ?"
+        ))
         {
-            int num = resultSet.getInt(1);
-            String uuid = resultSet.getString("uuid");
-            String name = resultSet.getString("name");
-            double money = resultSet.getDouble("money");
-            
-            userData.add(new BalanceTopEntry(num, money, uuid, name));
+            PreparedStatement statement = wrapper.getPreparedStatement();
+    
+            statement.setInt(1, count);
+            statement.setInt(2, index);
+    
+            ResultSet resultSet = statement.executeQuery();
+    
+            resultSet.beforeFirst();
+    
+            while (resultSet.next())
+            {
+                int num = resultSet.getInt(1);
+                String uuid = resultSet.getString("uuid");
+                String name = resultSet.getString("name");
+                double money = resultSet.getDouble("money");
+        
+                userData.add(new BalanceTopEntry(num, money, uuid, name));
+            }
         }
         
-        statement = connection.prepareStatement("SELECT SUM(money), COUNT(money) FROM " + userDataTableName + " WHERE exempt_balancetop = FALSE");
-        
-        resultSet = statement.executeQuery();
-        
-        resultSet.beforeFirst();
-        
-        double total = 0;
-        int accountCount = 0;
-        
-        if (resultSet.next())
+        try (PreparedStatementWrapper wrapper = createStatement(
+                "SELECT SUM(money), COUNT(money) FROM " + userDataTableName + " WHERE exempt_balancetop = FALSE"
+        ))
         {
-            total = resultSet.getDouble(1);
-            accountCount = resultSet.getInt(2);
+            PreparedStatement statement = wrapper.getPreparedStatement();
+            ResultSet resultSet = statement.executeQuery();
+    
+            resultSet.beforeFirst();
+    
+            double total = 0;
+            int accountCount = 0;
+    
+            if (resultSet.next())
+            {
+                total = resultSet.getDouble(1);
+                accountCount = resultSet.getInt(2);
+            }
+    
+            return new BalanceTopResult(userData, total, accountCount);
         }
-        
-        return new BalanceTopResult(userData, total, accountCount);
     }
     
     public boolean save(DbUserData userData, boolean isExemptOverride)
             throws SQLException
     {
-        PreparedStatement statement = connection.prepareStatement(
-                "REPLACE INTO " + userDataTableName + " (uuid, money, last_seen, data, exempt_balancetop, name) VALUES (?, ?, ?, ?, ?, ?)");
-        
-        User user = essentials.getUser(UUID.fromString(userData.getUuid()));
-        
-        boolean isExempt = true;
-        String name = "";
-        
-        if (user != null && user.getBase() instanceof OfflinePlayer)
+        try (PreparedStatementWrapper wrapper = createStatement(
+                "REPLACE INTO " + userDataTableName + " (uuid, money, last_seen, data, exempt_balancetop, name) VALUES (?, ?, ?, ?, ?, ?)"
+        ))
         {
-            if (!isExemptOverride)
-                isExempt = user.getBase().hasPermission("essentials.balancetop.exclude");
-            
-            name = user.getName();
+            PreparedStatement statement = wrapper.getPreparedStatement();
+    
+            User user = essentials.getUser(UUID.fromString(userData.getUuid()));
+    
+            boolean isExempt = true;
+            String name = "";
+    
+            if (user != null && user.getBase() != null)
+            {
+                if (!isExemptOverride)
+                    isExempt = user.getBase().hasPermission("essentials.balancetop.exclude");
+        
+                name = user.getName();
+            }
+    
+            setValues(statement,
+                    userData.getUuid(),
+                    userData.getMoney(),
+                    userData.getLastSeen(),
+                    userData.getData(),
+                    isExempt,
+                    name
+            );
+    
+            return statement.executeUpdate() != 0;
         }
         
-        setValues(statement,
-                  userData.getUuid(),
-                  userData.getMoney(),
-                  userData.getLastSeen(),
-                  userData.getData(),
-                  isExempt,
-                  name
-        );
-        
-        return statement.executeUpdate() != 0;
     }
     
     private void setValues(PreparedStatement statement, Object... arguments)
@@ -313,10 +351,12 @@ public class EssentialsDatabase
     public void createIndex(String name, String table, String column)
             throws SQLException
     {
-            PreparedStatement statement = connection.prepareStatement(
-                    "CREATE INDEX IF NOT EXISTS " + name + " ON " + table + "(" + column + ")");
-
-            statement.execute();
+        try (PreparedStatementWrapper wrapper = createStatement(
+                "CREATE INDEX IF NOT EXISTS " + name + " ON " + table + "(" + column + ")"
+        ))
+        {
+            wrapper.getPreparedStatement().execute();
+        }
     }
     
     public boolean createTable(String tableName, Class cls)
@@ -355,8 +395,10 @@ public class EssentialsDatabase
         
         fullStatement.append(')');
         
-        Statement statement = connection.createStatement();
-        statement.execute(fullStatement.toString());
+        try (PreparedStatementWrapper wrapper = createStatement(fullStatement.toString()))
+        {
+            wrapper.getPreparedStatement().execute();
+        }
         
         return true;
     }
@@ -375,6 +417,20 @@ public class EssentialsDatabase
     public Essentials getEssentials()
     {
         return essentials;
+    }
+    
+    public PreparedStatementWrapper createStatement(String sql)
+            throws SQLException
+    {
+        Connection connection = dataSource.getConnection();
+        return new PreparedStatementWrapper(connection, connection.prepareStatement(sql));
+    }
+    
+    public PreparedStatementWrapper createStatement(int flags, String sql)
+            throws SQLException
+    {
+        Connection connection = dataSource.getConnection();
+        return new PreparedStatementWrapper(connection, connection.prepareStatement(sql, flags));
     }
     
     private static class Index

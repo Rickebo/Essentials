@@ -220,7 +220,8 @@ public class Essentials extends JavaPlugin implements net.ess3.api.IEssentials {
                             settings.getDatabasePort(),
                             settings.getDatabaseUsername(),
                             settings.getDatabasePassword(),
-                            settings.getDatabaseTablePrefix()
+                            settings.getDatabaseTablePrefix(),
+                            settings.getMaxPoolSize()
                     );
                 } catch (Throwable ex)
                 {
