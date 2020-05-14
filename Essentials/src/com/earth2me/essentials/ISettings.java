@@ -42,6 +42,8 @@ public interface ISettings extends IConf {
 
     long getBackupInterval();
 
+    boolean isAlwaysRunBackup();
+
     String getChatFormat(String group);
 
     int getChatRadius();
