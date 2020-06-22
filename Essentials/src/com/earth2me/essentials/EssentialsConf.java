@@ -176,7 +176,12 @@ public class EssentialsConf extends YamlConfiguration {
     
     public boolean isUserdata()
     {
-        return configFile.getAbsoluteFile().getParentFile().getName().equals("userdata");
+        return isUserdata(configFile);
+    }
+    
+    public static boolean isUserdata(File file)
+    {
+        return file.getAbsoluteFile().getParentFile().getName().equals("userdata");
     }
     
     public boolean loadDatabaseUserData()
@@ -400,7 +405,26 @@ public class EssentialsConf extends YamlConfiguration {
 
         pendingDiskWrites.incrementAndGet();
 
-        return EXECUTOR_SERVICE.submit(new WriteRunner(configFile, data, pendingDiskWrites));
+        WriteRunner wr = new WriteRunner(configFile, data, pendingDiskWrites);
+    
+        BigDecimal decimal = getBigDecimal("money", new BigDecimal(0));
+        double money = decimal != null ? decimal.doubleValue() : 0;
+    
+        Long lastSeen = getLastSeen();
+        long lastSeenValue = lastSeen != null ? lastSeen : 0;
+    
+        boolean exemptOverride = this.getBoolean("npc", false);
+    
+        String uuidStr = configFile.getName().replace(".yml", "");
+        UUID uuid = UUID.fromString(uuidStr);
+        
+        wr.setDataSet(true);
+        wr.setExemptFromBaltop(exemptOverride);
+        wr.setLastSeen(lastSeen);
+        wr.setMoney(money);
+        wr.setPlayerUuid(uuid);
+        
+        return EXECUTOR_SERVICE.submit(wr);
     }
 
 
@@ -408,13 +432,71 @@ public class EssentialsConf extends YamlConfiguration {
         private final File configFile;
         private final String data;
         private final AtomicInteger pendingDiskWrites;
+        
+        private UUID playerUuid;
+        private long lastSeen;
+        private double money;
+        private boolean exemptFromBaltop;
+        private boolean isDataSet = false;
 
         private WriteRunner(final File configFile, final String data, final AtomicInteger pendingDiskWrites) {
             this.configFile = configFile;
             this.data = data;
             this.pendingDiskWrites = pendingDiskWrites;
         }
-
+    
+        // region Getters & setters
+        public UUID getPlayerUuid()
+        {
+            return playerUuid;
+        }
+    
+        public void setPlayerUuid(UUID playerUuid)
+        {
+            this.playerUuid = playerUuid;
+        }
+    
+        public long getLastSeen()
+        {
+            return lastSeen;
+        }
+    
+        public void setLastSeen(long lastSeen)
+        {
+            this.lastSeen = lastSeen;
+        }
+    
+        public double getMoney()
+        {
+            return money;
+        }
+    
+        public void setMoney(double money)
+        {
+            this.money = money;
+        }
+    
+        public boolean isExemptFromBaltop()
+        {
+            return exemptFromBaltop;
+        }
+    
+        public void setExemptFromBaltop(boolean exemptFromBaltop)
+        {
+            this.exemptFromBaltop = exemptFromBaltop;
+        }
+    
+        public boolean isDataSet()
+        {
+            return isDataSet;
+        }
+    
+        public void setDataSet(boolean dataSet)
+        {
+            isDataSet = dataSet;
+        }
+        // endregion
+    
         @Override
         public void run() {
             //long startTime = System.nanoTime();
@@ -427,6 +509,14 @@ public class EssentialsConf extends YamlConfiguration {
                     return;
                 }
                 try {
+                    
+                    EssentialsDatabase db = EssentialsDatabase.getInstance();
+                    if (isDataSet && db != null && enableDatabaseLoading && isUserdata(configFile))
+                    {
+                        db.save(new DbUserData(playerUuid, money, lastSeen, data), exemptFromBaltop);
+                        return;
+                    }
+                    
                     Files.createParentDirs(configFile);
 
                     if (!configFile.exists()) {
@@ -447,7 +537,7 @@ public class EssentialsConf extends YamlConfiguration {
                             writer.write(data);
                         }
                     }
-                } catch (IOException e) {
+                } catch (SQLException | IOException e) {
                     LOGGER.log(Level.SEVERE, e.getMessage(), e);
                 } finally {
                     //LOGGER.log(Level.INFO, configFile + " written to disk in " + (System.nanoTime() - startTime) + " nsec.");
