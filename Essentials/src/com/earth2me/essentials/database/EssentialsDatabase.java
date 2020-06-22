@@ -2,7 +2,6 @@ package com.earth2me.essentials.database;
 
 import com.earth2me.essentials.*;
 import com.zaxxer.hikari.HikariDataSource;
-import jdk.jfr.internal.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 
