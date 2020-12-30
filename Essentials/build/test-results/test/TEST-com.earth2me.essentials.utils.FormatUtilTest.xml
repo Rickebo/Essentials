@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.earth2me.essentials.utils.FormatUtilTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-12-30T15:32:06" hostname="RICKEBO" time="0.496">
+  <properties/>
+  <testcase name="testFormatCase" classname="com.earth2me.essentials.utils.FormatUtilTest" time="0.431"/>
+  <testcase name="testFormatAddRemovePerms" classname="com.earth2me.essentials.utils.FormatUtilTest" time="0.009"/>
+  <testcase name="testUnformat" classname="com.earth2me.essentials.utils.FormatUtilTest" time="0.012"/>
+  <testcase name="testFormatEscaping" classname="com.earth2me.essentials.utils.FormatUtilTest" time="0.009"/>
+  <testcase name="testFormatCategoryPerms" classname="com.earth2me.essentials.utils.FormatUtilTest" time="0.022"/>
+  <testcase name="testFormatCodePerms" classname="com.earth2me.essentials.utils.FormatUtilTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

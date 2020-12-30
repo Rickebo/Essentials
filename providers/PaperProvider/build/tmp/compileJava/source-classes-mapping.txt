@@ -1,0 +1,8 @@
+net/ess3/provider/providers/PaperServerStateProvider.java
+ net.ess3.provider.providers.PaperServerStateProvider
+net/ess3/provider/providers/PaperRecipeBookListener.java
+ net.ess3.provider.providers.PaperRecipeBookListener
+net/ess3/provider/providers/PaperContainerProvider.java
+ net.ess3.provider.providers.PaperContainerProvider
+net/ess3/provider/providers/PaperKnownCommandsProvider.java
+ net.ess3.provider.providers.PaperKnownCommandsProvider

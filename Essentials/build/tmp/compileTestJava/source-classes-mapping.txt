@@ -1,0 +1,20 @@
+com/earth2me/essentials/MessagingTest.java
+ com.earth2me.essentials.MessagingTest
+com/earth2me/essentials/UserTest.java
+ com.earth2me.essentials.UserTest
+com/earth2me/essentials/StorageTest.java
+ com.earth2me.essentials.StorageTest
+com/earth2me/essentials/EconomyTest.java
+ com.earth2me.essentials.EconomyTest
+com/earth2me/essentials/ToggleTest.java
+ com.earth2me.essentials.ToggleTest
+com/earth2me/essentials/UtilTest.java
+ com.earth2me.essentials.UtilTest
+com/earth2me/essentials/utils/FormatUtilTest.java
+ com.earth2me.essentials.utils.FormatUtilTest
+com/earth2me/essentials/FakeServer.java
+ com.earth2me.essentials.FakeServer
+ com.earth2me.essentials.FakeServer$1
+ com.earth2me.essentials.FakeServer$2
+ com.earth2me.essentials.FakeServer$3
+ com.earth2me.essentials.FakeServer$FakePluginManager

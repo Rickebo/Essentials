@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.earth2me.essentials.UserTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-30T15:32:06" hostname="RICKEBO" time="0.006">
+  <properties/>
+  <testcase name="testMoney" classname="com.earth2me.essentials.UserTest" time="0.004"/>
+  <testcase name="testHome" classname="com.earth2me.essentials.UserTest" time="0.0"/>
+  <testcase name="testUpdate" classname="com.earth2me.essentials.UserTest" time="0.0"/>
+  <system-out><![CDATA[testMoney should properly set, take, give, and get money
+]]></system-out>
+  <system-err><![CDATA[Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event UserBalanceUpdateEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event UserBalanceUpdateEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event UserBalanceUpdateEvent
+]]></system-err>
+</testsuite>

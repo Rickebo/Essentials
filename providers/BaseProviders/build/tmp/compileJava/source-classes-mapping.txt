@@ -1,0 +1,30 @@
+net/ess3/provider/providers/FlatSpawnEggProvider.java
+ net.ess3.provider.providers.FlatSpawnEggProvider
+net/ess3/provider/ServerStateProvider.java
+ net.ess3.provider.ServerStateProvider
+net/ess3/provider/KnownCommandsProvider.java
+ net.ess3.provider.KnownCommandsProvider
+net/ess3/provider/providers/BukkitSpawnerBlockProvider.java
+ net.ess3.provider.providers.BukkitSpawnerBlockProvider
+net/ess3/provider/providers/LegacySpawnEggProvider.java
+ net.ess3.provider.providers.LegacySpawnEggProvider
+net/ess3/provider/PotionMetaProvider.java
+ net.ess3.provider.PotionMetaProvider
+net/ess3/provider/Provider.java
+ net.ess3.provider.Provider
+net/ess3/provider/ProviderListener.java
+ net.ess3.provider.ProviderListener
+net/ess3/provider/providers/LegacyPotionMetaProvider.java
+ net.ess3.provider.providers.LegacyPotionMetaProvider
+net/ess3/provider/providers/BasePotionDataProvider.java
+ net.ess3.provider.providers.BasePotionDataProvider
+net/ess3/provider/SpawnerBlockProvider.java
+ net.ess3.provider.SpawnerBlockProvider
+net/ess3/provider/ContainerProvider.java
+ net.ess3.provider.ContainerProvider
+net/ess3/provider/SpawnEggProvider.java
+ net.ess3.provider.SpawnEggProvider
+net/ess3/provider/providers/BlockMetaSpawnerItemProvider.java
+ net.ess3.provider.providers.BlockMetaSpawnerItemProvider
+net/ess3/provider/SpawnerItemProvider.java
+ net.ess3.provider.SpawnerItemProvider

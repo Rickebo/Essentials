@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.earth2me.essentials.StorageTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-30T15:32:06" hostname="RICKEBO" time="0.025">
+  <properties/>
+  <testcase name="testOldUserdata" classname="com.earth2me.essentials.StorageTest" time="0.025"/>
+  <system-out><![CDATA[execution time: fake user created: 3.740ms - load empty user: 0.027ms - change home 1 times: 0.743ms - write user: 0.503ms - write user (cached): 0.631ms - reloaded file: 0.585ms - reloaded file (cached): 0.347ms - Total: 6.576ms
+]]></system-out>
+  <system-err><![CDATA[Dec 30, 2020 4:32:06 PM com.earth2me.essentials.I18n updateLocale
+INFO: Using locale en
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.Essentials setupForTesting
+INFO: Using temp folder for testing:
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.Essentials setupForTesting
+INFO: C:\Users\Simon\AppData\Local\Temp\essentialstest15863776766113466340
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] ServerListPingEvent: Spigot iterator API
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PlayerJoinEvent
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] Sending join event to Essentials
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.EssentialsConf load
+INFO: File C:\Projects\Java\Essentials\Essentials\userdata\3c9ebe1a-9098-43fd-bc0c-a369b76817ba.yml not read, because it's not yet written to disk.
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.EssentialsConf load
+INFO: File C:\Projects\Java\Essentials\Essentials\userdata\3c9ebe1a-9098-43fd-bc0c-a369b76817ba.yml not read, because it's not yet written to disk.
+]]></system-err>
+</testsuite>

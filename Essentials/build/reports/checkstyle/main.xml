@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.36.2">
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\AlternativeCommandsHandler.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\AsyncTeleport.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\AsyncTimedTeleport.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Backup.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\ChargeException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\CommandSource.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Console.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Enchantments.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Essentials.java">
+<error line="20" column="40" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - com.earth2me.essentials.commands.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="47" column="8" severity="error" message="Unused import - net.ess3.nms.refl.providers.ReflKnownCommandsProvider." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="62" column="8" severity="error" message="Unused import - net.ess3.provider.providers.PaperContainerProvider." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="63" column="8" severity="error" message="Unused import - net.ess3.provider.providers.PaperKnownCommandsProvider." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="113" column="1" severity="error" message="&apos;CLASS_DEF&apos; has more than 1 empty lines before." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="234" column="17" severity="error" message="&apos;{&apos; at column 17 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="247" column="17" severity="error" message="&apos;{&apos; at column 17 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="491" column="21" severity="error" message="Variable &apos;command&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="989" column="20" severity="error" message="Variable &apos;onlineUsers&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="1037" column="16" severity="error" message="Variable &apos;permName&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="1051" column="9" severity="error" message="Redundant &apos;public&apos; modifier." source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
+<error line="1093" column="39" severity="error" message="Variable &apos;version&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\EssentialsBlockListener.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\EssentialsConf.java">
+<error line="8" column="8" severity="error" message="Unused import - net.ess3.api.UserDoesNotExistException." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="39" column="17" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.util.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="59" column="1" severity="error" message="&apos;CLASS_DEF&apos; has more than 1 empty lines before." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="73" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="78" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="107" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="205" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="210" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="215" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="216" column="16" severity="error" message="Variable &apos;uuidStr&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="217" column="14" severity="error" message="Variable &apos;uuid&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="220" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="221" column="32" severity="error" message="Variable &apos;database&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="226" column="24" severity="error" message="Variable &apos;userData&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="234" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="238" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="242" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="368" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="372" column="16" severity="error" message="Variable &apos;uuidStr&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="373" column="14" severity="error" message="Variable &apos;uuid&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="376" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="377" column="32" severity="error" message="Variable &apos;database&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="382" column="24" severity="error" message="Variable &apos;decimal&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="383" column="20" severity="error" message="Variable &apos;money&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="385" column="18" severity="error" message="Variable &apos;lastSeen&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="386" column="18" severity="error" message="Variable &apos;lastSeenValue&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="388" column="21" severity="error" message="Variable &apos;exemptOverride&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="399" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="405" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="406" column="14" severity="error" message="Variable &apos;logIn&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="407" column="14" severity="error" message="Variable &apos;logOut&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="435" column="21" severity="error" message="Variable &apos;wr&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="437" column="20" severity="error" message="Variable &apos;decimal&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="438" column="16" severity="error" message="Variable &apos;money&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="440" column="14" severity="error" message="Variable &apos;lastSeen&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="441" column="14" severity="error" message="Variable &apos;lastSeenValue&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="443" column="17" severity="error" message="Variable &apos;exemptOverride&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="445" column="16" severity="error" message="Variable &apos;uuidStr&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="446" column="14" severity="error" message="Variable &apos;uuid&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="458" column="5" severity="error" message="&apos;CLASS_DEF&apos; has more than 1 empty lines before." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="458" column="5" severity="error" message="Class WriteRunner should be declared as final." source="com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck"/>
+<error line="477" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="482" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="487" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="492" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="497" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="502" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="507" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="512" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="517" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="522" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="540" column="40" severity="error" message="Variable &apos;db&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="542" column="21" severity="error" message="&apos;{&apos; at column 21 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="680" column="5" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\EssentialsEntityListener.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\EssentialsPlayerListener.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\EssentialsPluginListener.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\EssentialsServerListener.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\EssentialsTimer.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\EssentialsUpgrade.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\EssentialsUserConf.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\ExecuteTimer.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\I18n.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\IConf.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\IEssentials.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\IEssentialsModule.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\ISettings.java">
+<error line="21" column="5" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="22" column="5" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="23" column="5" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="24" column="5" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="25" column="5" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="26" column="5" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="27" column="5" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="30" column="5" severity="error" message="&apos;METHOD_DEF&apos; has more than 1 empty lines before." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\ITarget.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\IUser.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Jails.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Kit.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Kits.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\LocationTarget.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\ManagedFile.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\MetaItemStack.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Mob.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\MobCompat.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\MobData.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\PlayerExtension.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\PlayerList.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\PlayerTarget.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Potions.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\RandomTeleport.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Settings.java">
+<error line="142" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="148" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="154" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="160" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="166" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="172" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="178" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="184" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\SpawnMob.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\TNTExplodeListener.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Teleport.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\TimedTeleport.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Trade.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\UUIDMap.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\User.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\UserData.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\UserMap.java">
+<error line="19" column="17" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.util.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="27" column="1" severity="error" message="&apos;{&apos; at column 1 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="39" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="48" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="51" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="57" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="59" column="9" severity="error" message="&apos;}&apos; at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally)." source="RightCurlySame"/>
+<error line="61" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="67" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="93" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="94" column="28" severity="error" message="Variable &apos;database&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="97" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="99" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="103" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="111" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="122" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="127" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="129" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="132" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="138" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="146" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="152" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="153" column="28" severity="error" message="Variable &apos;database&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="156" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="158" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="161" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="171" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="172" column="28" severity="error" message="Variable &apos;database&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="175" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="177" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="180" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="190" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="192" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="194" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="196" column="13" severity="error" message="&apos;}&apos; at column 13 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally)." source="RightCurlySame"/>
+<error line="198" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="202" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="208" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="210" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="213" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="216" column="17" severity="error" message="&apos;{&apos; at column 17 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="219" column="17" severity="error" message="&apos;}&apos; at column 17 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally)." source="RightCurlySame"/>
+<error line="221" column="17" severity="error" message="&apos;{&apos; at column 17 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="223" column="21" severity="error" message="&apos;{&apos; at column 21 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="228" column="21" severity="error" message="&apos;}&apos; at column 21 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally)." source="RightCurlySame"/>
+<error line="230" column="21" severity="error" message="&apos;{&apos; at column 21 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="232" column="25" severity="error" message="&apos;{&apos; at column 25 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="245" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="249" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="256" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="269" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="275" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="280" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="282" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="288" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="297" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="302" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="307" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="312" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="317" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="322" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="339" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="345" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="352" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="355" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="360" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="365" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="370" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="373" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="378" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="380" column="9" severity="error" message="&apos;}&apos; at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally)." source="RightCurlySame"/>
+<error line="382" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="389" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="391" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="394" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="396" column="17" severity="error" message="&apos;{&apos; at column 17 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="404" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="407" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="413" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="415" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="420" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="427" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="430" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="432" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="439" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="444" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Warps.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\Worth.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\Economy.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\IAsyncTeleport.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\II18n.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\IItemDb.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\IJails.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\IReload.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\ITeleport.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\IWarps.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\InvalidNameException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\InvalidWorldException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\NoLoanPermittedException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\api\UserDoesNotExistException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandafk.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandantioch.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandanvil.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandback.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandbackup.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandbalance.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandbalancetop.java">
+<error line="19" column="17" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.util.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="25" column="1" severity="error" message="&apos;CLASS_DEF&apos; has more than 1 empty lines before." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="54" column="28" severity="error" message="Variable &apos;database&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="56" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="83" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="87" column="13" severity="error" message="Variable &apos;pageSize&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="90" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="91" column="49" severity="error" message="Variable &apos;data&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="93" column="27" severity="error" message="Variable &apos;now&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="94" column="17" severity="error" message="Variable &apos;totalPages&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="111" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="127" column="5" severity="error" message="&apos;CLASS_DEF&apos; has more than 1 empty lines before." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="131" column="9" severity="error" message="Redundant &apos;public&apos; modifier." source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
+<error line="186" column="5" severity="error" message="&apos;CLASS_DEF&apos; has more than 1 empty lines before." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="192" column="9" severity="error" message="Redundant &apos;public&apos; modifier." source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
+<error line="217" column="26" severity="error" message="Variable &apos;options&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandban.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandbanip.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandbeezooka.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandbigtree.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandbook.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandbreak.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandbroadcast.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandbroadcastworld.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandburn.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandcartographytable.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandclearinventory.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandclearinventoryconfirmtoggle.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandcompass.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandcondense.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandcreatekit.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandcustomtext.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commanddelhome.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commanddeljail.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commanddelkit.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commanddelwarp.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commanddepth.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commanddisposal.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandeco.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandeditsign.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandenchant.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandenderchest.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandessentials.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandexp.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandext.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandfeed.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandfireball.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandfirework.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandfly.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandgamemode.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandgc.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandgetpos.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandgive.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandgod.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandgrindstone.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandhat.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandheal.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandhelp.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandhelpop.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandhome.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandignore.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandinfo.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandinvsee.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commanditem.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commanditemdb.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commanditemlore.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commanditemname.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandjails.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandjump.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandkick.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandkickall.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandkill.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandkit.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandkittycannon.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandlightning.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandlist.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandloom.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandmail.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandme.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandmore.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandmotd.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandmsg.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandmsgtoggle.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandmute.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandnear.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandnick.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandnuke.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandpay.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandpayconfirmtoggle.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandpaytoggle.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandping.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandpotion.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandpowertool.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandpowertooltoggle.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandptime.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandpweather.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandr.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandrealname.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandrecipe.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandremove.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandrepair.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandrest.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandrtoggle.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandrules.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandseen.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandsell.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandsethome.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandsetjail.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandsettpr.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandsetwarp.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandsetworth.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandshowkit.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandskull.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandsmithingtable.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandsocialspy.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandspawner.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandspawnmob.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandspeed.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandstonecutter.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandsudo.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandsuicide.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtempban.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtempbanip.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandthunder.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtime.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtogglejail.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtop.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtp.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpa.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpaall.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpacancel.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpaccept.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpahere.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpall.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpauto.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpdeny.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtphere.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpo.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpoffline.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpohere.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtppos.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtpr.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtptoggle.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandtree.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandunban.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandunbanip.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandunlimited.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandvanish.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandwarp.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandwarpinfo.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandweather.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandwhois.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandworkbench.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandworld.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\Commandworth.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\EssentialsCommand.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\EssentialsLoopCommand.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\EssentialsToggleCommand.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\IEssentialsCommand.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\NoChargeException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\NotEnoughArgumentsException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\PlayerExemptException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\PlayerNotFoundException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\QuietAbortException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\commands\WarpNotFoundException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\craftbukkit\BanLookup.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\craftbukkit\FakeWorld.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\craftbukkit\InventoryWorkaround.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\craftbukkit\SetExpFix.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\database\DatabaseColumn.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="11" column="1" severity="error" message="&apos;{&apos; at column 1 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\database\DbUserData.java">
+<error line="8" column="1" severity="error" message="&apos;{&apos; at column 1 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="35" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="40" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="48" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="59" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="69" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="74" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="79" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="84" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="89" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="94" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="99" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="104" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="109" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="114" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="119" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="124" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\database\EssentialsDatabase.java">
+<error line="3" column="31" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - com.earth2me.essentials.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="9" column="8" severity="error" message="Unused import - java.lang.reflect.Array." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="11" column="8" severity="error" message="Unused import - java.math.BigDecimal." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="12" column="16" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - java.sql.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="17" column="8" severity="error" message="Unused import - java.util.concurrent.atomic.AtomicReference." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="21" column="1" severity="error" message="&apos;{&apos; at column 1 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="38" column="5" severity="error" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="39" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="45" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="61" severity="error" message="There is more than 1 empty line one after another." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="63" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="66" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="72" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="74" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="75" column="31" severity="error" message="Variable &apos;statement&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="77" column="23" severity="error" message="Variable &apos;resultSet&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="87" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="93" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="110" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="111" column="16" severity="error" message="Variable &apos;url&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="124" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="125" column="17" severity="error" message="Variable &apos;fields&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="126" column="15" severity="error" message="Variable &apos;annotationType&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="129" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="130" column="28" severity="error" message="Variable &apos;annotationObj&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="141" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="145" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="146" column="31" severity="error" message="Variable &apos;statement&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="150" column="23" severity="error" message="Variable &apos;resultSet&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="160" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="164" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="165" column="31" severity="error" message="Variable &apos;statement&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="169" column="23" severity="error" message="Variable &apos;resultSet&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="179" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="183" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="184" column="31" severity="error" message="Variable &apos;statement&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="188" column="23" severity="error" message="Variable &apos;resultSet&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="200" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="204" column="16" severity="error" message="Variable &apos;files&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="207" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="215" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="217" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="221" column="24" severity="error" message="Variable &apos;uuidStr&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="223" column="22" severity="error" message="Variable &apos;uuid&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="228" column="31" severity="error" message="Variable &apos;player&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="230" column="36" severity="error" message="Variable &apos;conf&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="235" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="241" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="242" column="31" severity="error" message="Variable &apos;userData&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="248" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="249" column="31" severity="error" message="Variable &apos;statement&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="254" column="23" severity="error" message="Variable &apos;resultSet&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="259" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="260" column="21" severity="error" message="Variable &apos;num&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="261" column="24" severity="error" message="Variable &apos;uuid&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="262" column="24" severity="error" message="Variable &apos;name&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="263" column="24" severity="error" message="Variable &apos;money&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="272" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="273" column="31" severity="error" message="Variable &apos;statement&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="274" column="23" severity="error" message="Variable &apos;resultSet&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="282" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="293" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="297" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="298" column="31" severity="error" message="Variable &apos;statement&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="300" column="18" severity="error" message="Variable &apos;user&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="306" column="13" severity="error" message="&apos;{&apos; at column 13 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="329" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="336" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="337" column="21" severity="error" message="Variable &apos;indices&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="352" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="356" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="363" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="364" column="22" severity="error" message="Variable &apos;columns&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="365" column="23" severity="error" message="Variable &apos;sb&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="379" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="382" column="23" severity="error" message="Variable &apos;fullStatement&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="386" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="398" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="406" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="417" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="423" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="424" column="20" severity="error" message="Variable &apos;connection&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="430" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="431" column="20" severity="error" message="Variable &apos;connection&apos; should be declared final." source="com.puppycrawl.tools.checkstyle.checks.coding.FinalLocalVariableCheck"/>
+<error line="436" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="441" column="9" severity="error" message="Redundant &apos;public&apos; modifier." source="com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck"/>
+<error line="442" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="449" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="454" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="459" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="465" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="471" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="478" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="483" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="488" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="494" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="501" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="509" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="514" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="519" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="524" column="9" severity="error" message="&apos;{&apos; at column 9 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\database\PreparedStatementWrapper.java">
+<error line="8" column="1" severity="error" message="&apos;{&apos; at column 1 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="13" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="21" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="28" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="33" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\database\RuntimeSqlException.java">
+<error line="6" column="1" severity="error" message="&apos;{&apos; at column 1 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="8" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="13" column="5" severity="error" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\items\AbstractItemDb.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\items\CustomItemResolver.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\items\FlatItemDb.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\items\LegacyItemDb.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\messaging\IMessageRecipient.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\messaging\SimpleMessageRecipient.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\metrics\MetricsWrapper.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\perm\IPermissionsHandler.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\perm\PermissionsDefaults.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\perm\PermissionsHandler.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\perm\impl\AbstractVaultHandler.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\perm\impl\ConfigPermissionsHandler.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\perm\impl\GenericVaultHandler.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\perm\impl\LuckPermsHandler.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\perm\impl\ModernVaultHandler.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\perm\impl\SuperpermsHandler.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\register\payment\Method.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\register\payment\Methods.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\register\payment\methods\VaultEco.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\settings\Jails.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\settings\Spawns.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\EssentialsSign.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignBalance.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignBlockListener.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignBuy.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignDisposal.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignEnchant.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignEntityListener.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignFree.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignGameMode.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignHeal.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignInfo.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignKit.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignMail.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignPlayerListener.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignProtection.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignRepair.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignSell.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignSpawnmob.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignTime.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignTrade.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignWarp.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\SignWeather.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\signs\Signs.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\AbstractDelayedYamlFileReader.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\AbstractDelayedYamlFileWriter.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\AsyncStorageObjectHolder.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\BukkitConstructor.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\Comment.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\EnchantmentLevel.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\IStorageObjectHolder.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\IStorageReader.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\IStorageWriter.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\ListType.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\MapKeyType.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\MapValueType.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\ObjectLoadException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\StorageObject.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\YamlStorageReader.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\storage\YamlStorageWriter.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\textreader\BookInput.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\textreader\BookPager.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\textreader\HelpInput.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\textreader\IText.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\textreader\KeywordReplacer.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\textreader\SimpleTextInput.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\textreader\SimpleTextPager.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\textreader\TextInput.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\textreader\TextPager.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\utils\DateUtil.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\utils\DescParseTickFormat.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\utils\EnumUtil.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\utils\FloatUtil.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\utils\FormatUtil.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\utils\LocationUtil.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\utils\MaterialUtil.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\utils\NumberUtil.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\utils\StringUtil.java">
+<error line="12" column="65" severity="info" message="Unicode escape(s) usage should be avoided." source="com.puppycrawl.tools.checkstyle.checks.AvoidEscapedUnicodeCharactersCheck"/>
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\com\earth2me\essentials\utils\VersionUtil.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\Economy.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\IEssentials.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\II18n.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\IItemDb.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\IJails.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\IReload.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\ISettings.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\ITeleport.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\IUser.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\IWarps.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\InvalidNameException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\InvalidWorldException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\MaxMoneyException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\NoLoanPermittedException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\PluginKey.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\UserDoesNotExistException.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\AfkStatusChangeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\FlyStatusChangeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\GodStatusChangeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\IgnoreStatusChangeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\JailStatusChangeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\KitClaimEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\LocalChatSpyEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\MuteStatusChangeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\NickChangeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\PrivateMessagePreSendEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\PrivateMessageSentEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\SignBreakEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\SignCreateEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\SignEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\SignInteractEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\StateChangeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\StatusChangeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\TPARequestEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\UserBalanceUpdateEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\UserRandomTeleportEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\UserTeleportHomeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\UserWarpEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\VanishStatusChangeEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\teleport\PreTeleportEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\teleport\TeleportEvent.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\main\java\net\ess3\api\events\teleport\TeleportWarmupEvent.java">
+</file>
+</checkstyle>

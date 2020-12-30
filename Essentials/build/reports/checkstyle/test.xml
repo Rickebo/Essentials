@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.36.2">
+<file name="C:\Projects\Java\Essentials\Essentials\src\test\java\com\earth2me\essentials\EconomyTest.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\test\java\com\earth2me\essentials\FakeServer.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\test\java\com\earth2me\essentials\MessagingTest.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\test\java\com\earth2me\essentials\StorageTest.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\test\java\com\earth2me\essentials\ToggleTest.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\test\java\com\earth2me\essentials\UserTest.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\test\java\com\earth2me\essentials\UtilTest.java">
+</file>
+<file name="C:\Projects\Java\Essentials\Essentials\src\test\java\com\earth2me\essentials\utils\FormatUtilTest.java">
+</file>
+</checkstyle>

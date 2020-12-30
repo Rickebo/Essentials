@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.earth2me.essentials.EconomyTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-12-30T15:32:06" hostname="RICKEBO" time="0.107">
+  <properties/>
+  <testcase name="testNegativePayCommand" classname="com.earth2me.essentials.EconomyTest" time="0.038"/>
+  <testcase name="testEconomy" classname="com.earth2me.essentials.EconomyTest" time="0.068"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Dec 30, 2020 4:32:06 PM com.earth2me.essentials.I18n updateLocale
+INFO: Using locale en
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.Essentials setupForTesting
+INFO: Using temp folder for testing:
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.Essentials setupForTesting
+INFO: C:\Users\Simon\AppData\Local\Temp\essentialstest14045446920973082435
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] ServerListPingEvent: Spigot iterator API
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PlayerJoinEvent
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] Sending join event to Essentials
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PlayerJoinEvent
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] Sending join event to Essentials
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.I18n updateLocale
+INFO: Using locale en
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.Essentials setupForTesting
+INFO: Using temp folder for testing:
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.Essentials setupForTesting
+INFO: C:\Users\Simon\AppData\Local\Temp\essentialstest10820252033594816581
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] ServerListPingEvent: Spigot iterator API
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PlayerJoinEvent
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] Sending join event to Essentials
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PlayerJoinEvent
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] Sending join event to Essentials
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+WARNING: [Essentials] Falling back to old username system for npc1
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event UserBalanceUpdateEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event UserBalanceUpdateEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event UserBalanceUpdateEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event UserBalanceUpdateEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event UserBalanceUpdateEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event UserBalanceUpdateEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event UserBalanceUpdateEvent
+]]></system-err>
+</testsuite>

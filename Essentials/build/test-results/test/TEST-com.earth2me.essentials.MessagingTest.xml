@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.earth2me.essentials.MessagingTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-12-30T15:32:06" hostname="RICKEBO" time="0.048">
+  <properties/>
+  <testcase name="testNonNullLastMessageReplyRecipient" classname="com.earth2me.essentials.MessagingTest" time="0.028"/>
+  <testcase name="testNullLastMessageReplyRecipient" classname="com.earth2me.essentials.MessagingTest" time="0.019"/>
+  <system-out><![CDATA[Console message: §6[§ctestPlayer1§6 -> §cme§6] §rHey, master!
+Console message: §6[§ctestPlayer1§6 -> §cme§6] §rThis is me sending you a message using /r without you replying!
+Console message: §4testPlayer1 recently went offline.
+]]></system-out>
+  <system-err><![CDATA[Dec 30, 2020 4:32:06 PM com.earth2me.essentials.I18n updateLocale
+INFO: Using locale en
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.Essentials setupForTesting
+INFO: Using temp folder for testing:
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.Essentials setupForTesting
+INFO: C:\Users\Simon\AppData\Local\Temp\essentialstest1895617247097674998
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] ServerListPingEvent: Spigot iterator API
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PlayerJoinEvent
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] Sending join event to Essentials
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PrivateMessagePreSendEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PrivateMessageSentEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PrivateMessagePreSendEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PrivateMessageSentEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event AfkStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PrivateMessagePreSendEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PrivateMessageSentEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.I18n updateLocale
+INFO: Using locale en
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.Essentials setupForTesting
+INFO: Using temp folder for testing:
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.Essentials setupForTesting
+INFO: C:\Users\Simon\AppData\Local\Temp\essentialstest17843788769993819483
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] ServerListPingEvent: Spigot iterator API
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event PlayerJoinEvent
+Dec 30, 2020 4:32:06 PM org.bukkit.plugin.PluginLogger log
+INFO: [Essentials] Sending join event to Essentials
+]]></system-err>
+</testsuite>

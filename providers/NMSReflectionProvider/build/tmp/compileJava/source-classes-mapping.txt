@@ -1,0 +1,15 @@
+net/ess3/nms/refl/SpawnEggRefl.java
+ net.ess3.nms.refl.SpawnEggRefl
+net/ess3/nms/refl/providers/ReflKnownCommandsProvider.java
+ net.ess3.nms.refl.providers.ReflKnownCommandsProvider
+net/ess3/nms/refl/providers/ReflServerStateProvider.java
+ net.ess3.nms.refl.providers.ReflServerStateProvider
+net/ess3/nms/refl/providers/ReflSpawnerBlockProvider.java
+ net.ess3.nms.refl.providers.ReflSpawnerBlockProvider
+net/ess3/nms/refl/ReflUtil.java
+ net.ess3.nms.refl.ReflUtil
+ net.ess3.nms.refl.ReflUtil$ConstructorParams
+ net.ess3.nms.refl.ReflUtil$MethodParams
+ net.ess3.nms.refl.ReflUtil$NMSVersion
+net/ess3/nms/refl/providers/ReflSpawnEggProvider.java
+ net.ess3.nms.refl.providers.ReflSpawnEggProvider

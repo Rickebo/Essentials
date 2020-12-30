@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.earth2me.essentials.UtilTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-30T15:32:06" hostname="RICKEBO" time="0.012">
+  <properties/>
+  <testcase name="testFDDfuture" classname="com.earth2me.essentials.UtilTest" time="0.007"/>
+  <testcase name="testVer" classname="com.earth2me.essentials.UtilTest" time="0.001"/>
+  <testcase name="testFDDnow" classname="com.earth2me.essentials.UtilTest" time="0.0"/>
+  <testcase name="testSafeLocation" classname="com.earth2me.essentials.UtilTest" time="0.0"/>
+  <testcase name="testFDDpast" classname="com.earth2me.essentials.UtilTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

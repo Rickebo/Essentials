@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.earth2me.essentials.ToggleTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-30T15:32:06" hostname="RICKEBO" time="0.02">
+  <properties/>
+  <testcase name="testAliasesToggle" classname="com.earth2me.essentials.ToggleTest" time="0.006"/>
+  <testcase name="testFlyToggle" classname="com.earth2me.essentials.ToggleTest" time="0.002"/>
+  <testcase name="testFlyDisOnToggle" classname="com.earth2me.essentials.ToggleTest" time="0.001"/>
+  <testcase name="testGodToggle" classname="com.earth2me.essentials.ToggleTest" time="0.008"/>
+  <testcase name="testConsoleToggle" classname="com.earth2me.essentials.ToggleTest" time="0.003"/>
+  <system-out><![CDATA[Console message: §6Set fly mode§c enabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c enabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c disabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c disabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c enabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c enabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c disabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c disabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c enabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c enabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c disabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c disabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c enabled §6for testPlayer1§6.
+Console message: §6Set fly mode§c disabled §6for testPlayer1§6.
+]]></system-out>
+  <system-err><![CDATA[Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event GodStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event GodStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event GodStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event GodStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event GodStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event GodStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+Dec 30, 2020 4:32:06 PM com.earth2me.essentials.FakeServer$FakePluginManager callEvent
+INFO: Called event FlyStatusChangeEvent
+]]></system-err>
+</testsuite>
