@@ -6,6 +6,8 @@
 
 [<img alt="Patreon" src="https://img.shields.io/badge/-Support_on_Patreon-F96854.svg?logo=patreon&style=flat-square&logoColor=white" height=32>](https://www.patreon.com/essentialsx)
 
+Warning: this fork of EssentialsX was created to add basic database support for storing userdata files. This fork will no longer be updated as I have switched to another way of storing userdata in a database, which does not involve forking the plugin.
+
 This is a fork of Essentials called EssentialsX.
 
 If you are using this, do **NOT** ask Essentials for support.
